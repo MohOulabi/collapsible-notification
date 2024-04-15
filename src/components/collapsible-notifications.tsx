@@ -26,7 +26,7 @@ export const CollapsibleNotifications = () => {
     <Collapsible
       open={isOpen}
       onOpenChange={setIsOpen}
-      className="w-[446px] max-w-full border-border border rounded-xl shadow-sm"
+      className="w-[446px] max-w-[95vw] border-border border rounded-xl shadow-sm"
     >
       <div className="flex p-4 gap-4 items-center">
         <motion.div
@@ -42,7 +42,10 @@ export const CollapsibleNotifications = () => {
           </div>
         </motion.div>
         <div className="space-y-1 relative ">
-          <motion.div layout="position" className="leading-none font-semibold">
+          <motion.div
+            layout="position"
+            className="leading-none text-sm md:text-base font-semibold"
+          >
             5 New Activities
           </motion.div>
           {!isOpen && (
@@ -50,7 +53,7 @@ export const CollapsibleNotifications = () => {
               initial={{ scaleX: 1, opacity: 1 }}
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 0.3 }}
-              className="text-muted-foreground text-sm origin-top-left"
+              className="text-muted-foreground text-xs md:text-sm origin-top-left"
             >
               What&apos;s happening around you
             </motion.div>
@@ -102,10 +105,10 @@ export const CollapsibleNotifications = () => {
                     </div>
                   </div>
                   <div className="space-y-1">
-                    <div className="leading-none font-semibold text-sm">
+                    <div className="leading-none font-semibold text-xs md:text-sm">
                       {notification.title}
                     </div>
-                    <div className="text-muted-foreground text-xs">
+                    <div className="text-muted-foreground text-[10px] sm:text-xs">
                       {notification.message}
                     </div>
                   </div>
